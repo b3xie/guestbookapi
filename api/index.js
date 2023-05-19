@@ -25,7 +25,7 @@ app.post("/api/post", (request, response) => {
     name: request.body.name,
     post: request.body.post,
   });
-  if (Post.name != "" && Post.post != "") {
+  if (publicar.name != "" && publicar.post != "") {
     publicar.save().then((result) => {
       console.log("200");
       mongoose.connection.close();
