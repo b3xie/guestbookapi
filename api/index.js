@@ -18,6 +18,11 @@ app.post("/api/post", (request, response) => {
     name: request.body.name,
     post: request.body.post,
   });
+  publicar.save().then((result) => {
+    console.log("200");
+    mongoose.connection.close();
+    response.status(200).end();
+  });
 });
 app.get("/api/posts", (request, response) => {
   Post.find({}).then((posts) => {
